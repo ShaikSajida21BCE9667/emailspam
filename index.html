@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Spam Classification</title>
+    <style>
+        body {
+            background-color: #d36e21;
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        textarea {
+            width: 80%;
+            height: 200px;
+            padding: 10px;
+            margin: 20px auto;
+            border-radius: 10px;
+            border: 2px solid #ccc;
+            background-color: #f8f8f8;
+            color: #333;
+            font-size: 16px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #result {
+            margin-top: 20px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Email Spam Classification</h1>
+        <textarea id="emailText" placeholder="Enter email text here..."></textarea>
+        <br>
+        <button onclick="predict()">Predict</button>
+        <p id="result"></p>
+    </div>
+    <script>
+        function predict() {
+            var text = document.getElementById('emailText').value;
+            var resultElement = document.getElementById('result');
+
+            // Simple rule-based prediction, replace with your own logic
+            if (text.toLowerCase().includes("free") || text.toLowerCase().includes("sale")) {
+                resultElement.innerText = "Prediction: Spam";
+            } else {
+                resultElement.innerText = "Prediction: Not Spam";
+            }
+        }
+    </script>
+</body>
+</html>
